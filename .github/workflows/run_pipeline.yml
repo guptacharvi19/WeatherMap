@@ -21,4 +21,6 @@ jobs:
     - name: Execute Weather Script
       env:
         OPENWEATHER_API_KEY: ${{ secrets.OPENWEATHER_API_KEY }}
-      run: python weather.py
+      run: |
+        # This command finds the file anywhere in the repository and runs it
+        python $(find . -name "weather.py" | head -n 1)
